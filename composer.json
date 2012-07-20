@@ -1,0 +1,20 @@
+{
+    "name": "valorin/console",
+    "description": "Simple PHP Console interface helper.",
+    "license": "BSD-3-Clause",
+    "keywords": [
+        "console",
+        "cli"
+    ],
+    "authors": [
+        {
+            "name": "Stephen Rees-Carter",
+            "email": "stephen@rees-carter.net"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "Valorin\\Console": "src/"
+        }
+    }
+}
