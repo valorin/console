@@ -10,9 +10,14 @@
  * @package     Valorin\Console
  */
 
-namespace Valorin;
+namespace Valorin\Console;
 
-class Console
+/**
+ * \Valorin\Console\Simple
+ *
+ * A collection of simple static functions to help with console tools
+ */
+class Simple
 {
     /**
      * Get CLI Arguments

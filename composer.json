@@ -1,6 +1,6 @@
 {
     "name": "valorin/console",
-    "description": "A simple PHP Console interface helper.",
+    "description": "A collection of simple PHP tools for creating a console interface.",
     "homepage": "https://github.com/valorin/console",
     "license": "BSD-3-Clause",
     "keywords": [
