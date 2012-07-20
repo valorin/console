@@ -1,4 +1,4 @@
 Valorin\Console
 ===============
 
-Simple PHP Console interface helper.
+A simple PHP Console interface helper.

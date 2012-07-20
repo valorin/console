@@ -1,6 +1,7 @@
 {
     "name": "valorin/console",
-    "description": "Simple PHP Console interface helper.",
+    "description": "A simple PHP Console interface helper.",
+    "homepage": "https://github.com/valorin/console",
     "license": "BSD-3-Clause",
     "keywords": [
         "console",
@@ -9,7 +10,8 @@
     "authors": [
         {
             "name": "Stephen Rees-Carter",
-            "email": "stephen@rees-carter.net"
+            "email": "stephen@rees-carter.net",
+            "homepage": "http://stephen.rees-carter.net/"
         }
     ],
     "autoload": {
