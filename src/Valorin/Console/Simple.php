@@ -20,6 +20,32 @@ namespace Valorin\Console;
 class Simple
 {
     /**
+     * @var Boolean Only outputs if the console is enabled
+     */
+    static protected $enabled = false;
+
+
+    /**
+     * Enable the Console
+     *
+     */
+    static public function enable()
+    {
+        self::$enabled = true;
+    }
+
+
+    /**
+     * Disable the Console
+     *
+     */
+    static public function disable()
+    {
+        self::$enabled = false;
+    }
+
+
+    /**
      * Get CLI Arguments
      *
      * @return  Array
