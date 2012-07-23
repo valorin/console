@@ -23,6 +23,7 @@ class Simple
      * @var Boolean Only outputs if the console is enabled
      */
     static protected $enabled = false;
+    static protected $dot     = false;
 
 
     /**
@@ -118,6 +119,14 @@ class Simple
     static public function output($text = "", $colour = null)
     {
         /**
+         * Ignore if not enabled
+         */
+        if (!self::$enabled) {
+            return;
+        }
+
+
+        /**
          * Check for an array of text
          */
         if (is_array($text)) {
@@ -134,6 +143,15 @@ class Simple
         if ($colour) {
             $text = self::colour($text, $colour);
         }
+
+
+        /**
+         * Check for preceeding dot and add a \n
+         */
+        if (self::$dot) {
+            echo "\n";
+        }
+        self::$dot = false;
 
 
         /**
@@ -187,5 +205,19 @@ class Simple
          * Colourize
          */
         return "\033[{$colour}m{$text}\033[m";
+    }
+
+
+    /**
+     * Output a simple dot into the console, as an activity indicator
+     *
+     * @param   String  $char   Character to echo
+     */
+    static public function dot($char = ".")
+    {
+        if (self::$enabled) {
+            self::$dot = true;
+            echo $char;
+        }
     }
 }
