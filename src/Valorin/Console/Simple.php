@@ -234,6 +234,7 @@ class Simple
          * Add newline if > 80
          */
         if (self::$dots > 80) {
+            self::$dots = 0;
             echo "\n";
         }
 
