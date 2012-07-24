@@ -23,7 +23,11 @@ class Simple
      * @var Boolean Only outputs if the console is enabled
      */
     static protected $enabled = false;
-    static protected $dot     = false;
+
+    /**
+     * @var Integer
+     */
+    static protected $dots = 0;
 
 
     /**
@@ -148,10 +152,10 @@ class Simple
         /**
          * Check for preceeding dot and add a \n
          */
-        if (self::$dot) {
+        if (self::$dots > 0) {
             echo "\n";
         }
-        self::$dot = false;
+        self::$dots = 0;
 
 
         /**
@@ -215,9 +219,28 @@ class Simple
      */
     static public function dot($char = ".")
     {
-        if (self::$enabled) {
-            self::$dot = true;
-            echo $char;
+        if (!self::$enabled) {
+            return;
         }
+
+
+        /**
+         * Increment dots counter
+         */
+        self::$dots++;
+
+
+        /**
+         * Add newline if > 80
+         */
+        if (self::$dots > 80) {
+            echo "\n";
+        }
+
+
+        /**
+         * Echo char
+         */
+        echo $char;
     }
 }
