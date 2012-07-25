@@ -233,8 +233,16 @@ class Simple
         /**
          * Add newline if > 80
          */
-        if (self::$dots > 80) {
-            self::$dots = 0;
+        try {
+            $width  = exec('tput cols');
+        } catch (Exception $e) {
+            if (!isset($width) || empty($width)) {
+                $width = 80;
+            }
+        }
+
+        if (self::$dots > $width) {
+            self::$dots = 1;
             echo "\n";
         }
 
