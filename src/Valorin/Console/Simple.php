@@ -234,12 +234,14 @@ class Simple
          * Add newline if > 80
          */
         try {
-            $width  = exec('tput cols');
+            $width = @exec('tput cols');
         } catch (Exception $e) {
-            if (!isset($width) || empty($width)) {
-                $width = 80;
-            }
+            $width = 80;
         }
+        if (!isset($width) || empty($width) || !is_numeric($width)) {
+            $width = 80;
+        }
+
 
         if (self::$dots > $width) {
             self::$dots = 1;
